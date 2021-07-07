@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: DX Plugin Base
+ * Plugin Name: DC Plugin Base
  * Description: A plugin framework for building new WordPress plugins reusing the accepted APIs and best practices
  * Plugin URI: http://example.org/
  * Author: nofearinc
@@ -286,13 +286,13 @@ class DX_Plugin_Base {
 	public function dx_custom_post_types_callback() {
 		register_post_type( 'pluginbase', array(
 			'labels' => array(
-				'name' => __("Base Items", 'dxbase'),
-				'singular_name' => __("Base Item", 'dxbase'),
-				'add_new' => _x("Add New", 'pluginbase', 'dxbase' ),
+				'name' => __("Base Items", 'dxbase', "Items"),
+				'singular_name' => __("Base Item", 'dxbase', "Item"),
+				'add_new' => _x( "Add New", 'pluginbase', 'dxbase' ),
 				'add_new_item' => __("Add New Base Item", 'dxbase' ),
-				'edit_item' => __("Edit Base Item", 'dxbase' ),
-				'new_item' => __("New Base Item", 'dxbase' ),
-				'view_item' => __("View Base Item", 'dxbase' ),
+				'edit_item' => __("Edit Base Item", 'dxbase'),
+				'new_item' => __("New Base Item", 'dxbase'),
+				'view_item' => __("View Base Item", 'dxbase'),
 				'search_items' => __("Search Base Items", 'dxbase' ),
 				'not_found' =>  __("No base items found", 'dxbase' ),
 				'not_found_in_trash' => __("No base items found in Trash", 'dxbase' ),
@@ -312,6 +312,7 @@ class DX_Plugin_Base {
 				'thumbnail',
 				'custom-fields',
 				'page-attributes',
+				'author'
 			),
 			'taxonomies' => array( 'post_tag' )
 		));	

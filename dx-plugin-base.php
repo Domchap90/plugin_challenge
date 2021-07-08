@@ -90,7 +90,7 @@ class DX_Plugin_Base {
 		
 		// Add a sample widget
 		add_action( 'widgets_init', array( $this, 'dx_sample_widget' ) );
-		
+		echo "This is ran";
 		/*
 		 * TODO:
 		 * 		template_redirect
@@ -286,8 +286,8 @@ class DX_Plugin_Base {
 	public function dx_custom_post_types_callback() {
 		register_post_type( 'pluginbase', array(
 			'labels' => array(
-				'name' => __("Base Items", 'dxbase', "Items"),
-				'singular_name' => __("Base Item", 'dxbase', "Item"),
+				'name' => __("Base Items", 'dxbase'),
+				'singular_name' => __("Base Item", 'dxbase'),
 				'add_new' => _x( "Add New", 'pluginbase', 'dxbase' ),
 				'add_new_item' => __("Add New Base Item", 'dxbase' ),
 				'edit_item' => __("Edit Base Item", 'dxbase'),
@@ -312,10 +312,21 @@ class DX_Plugin_Base {
 				'thumbnail',
 				'custom-fields',
 				'page-attributes',
-				'author'
 			),
 			'taxonomies' => array( 'post_tag' )
 		));	
+
+		register_post_type( 'pluginbase', array(
+			'labels' => array(
+				'name' => __('Items', 'dxbase'),
+				'singular_name' => __('Item', 'dxbase'),
+				),
+			'show_ui' => true,
+			'show_in_menu' => true,
+			'supports' => 'author'
+		));
+
+
 	}
 	
 	
